@@ -7,9 +7,9 @@ use Throwable;
 
 class TssClient
 {
-    private Config $config;
+    private TssConfig $config;
 
-    public function __construct(Config $config)
+    public function __construct(TssConfig $config)
     {
         $this->config = $config;
     }
@@ -17,7 +17,7 @@ class TssClient
     /**
      * @throws TssException
      */
-    public function send(RequestDto $request): void
+    public function send(TssRequestDto $request): void
     {
         // is enable
         if (!$this->config->isEnable()) {

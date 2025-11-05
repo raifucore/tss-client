@@ -2,7 +2,7 @@
 
 namespace RaifuCore\TssClient;
 
-class RequestDto
+class TssRequestDto
 {
     protected ?string $category;
     protected ?string $name;

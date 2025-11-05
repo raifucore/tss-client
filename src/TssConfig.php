@@ -2,7 +2,7 @@
 
 namespace RaifuCore\TssClient;
 
-class Config
+class TssConfig
 {
     private ?string $host;
     private ?string $apiToken;
