@@ -6,22 +6,18 @@ class TssConfig
 {
     private ?string $host;
     private ?string $apiToken;
-    private ?string $sourceToken;
+    private ?string $sourceKey;
     private bool $isEnable;
 
-    public function __construct(
-        string $host,
-        string $apiToken,
-        string $sourceToken,
-        bool $isEnable = true
-    ) {
-        $this->host = $host;
-        $this->apiToken = $apiToken;
-        $this->sourceToken = $sourceToken;
-        $this->isEnable = $isEnable;
+    public function __construct(array $config)
+    {
+        $this->host = $config['api_url'] ?? null;
+        $this->apiToken = $config['api_token'] ?? null;
+        $this->sourceKey = $config['source_key'] ?? null;
+        $this->isEnable = $config['enable'] ?? false;
     }
 
-    public function getHost(): string
+    public function getHost(): ?string
     {
         return $this->host;
     }
@@ -31,9 +27,9 @@ class TssConfig
         return $this->apiToken;
     }
 
-    public function getSourceToken(): ?string
+    public function getSourceKey(): ?string
     {
-        return $this->sourceToken;
+        return $this->sourceKey;
     }
 
     public function isEnable(): bool

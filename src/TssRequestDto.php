@@ -4,9 +4,14 @@ namespace RaifuCore\TssClient;
 
 class TssRequestDto
 {
-    protected ?string $category;
+    protected string $category;
     protected ?string $name;
     protected ?array $payload = null;
+
+    public function __construct(string $category)
+    {
+        $this->category = $category;
+    }
 
     public function getCategory(): ?string
     {
@@ -21,12 +26,6 @@ class TssRequestDto
     public function getPayload(): ?array
     {
         return $this->payload;
-    }
-
-    public function setCategory(string $category): self
-    {
-        $this->category = $category;
-        return $this;
     }
 
     public function setName(string $name): self
