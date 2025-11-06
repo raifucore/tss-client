@@ -5,7 +5,7 @@ namespace RaifuCore\TssClient;
 class TssRequestDto
 {
     protected string $category;
-    protected ?string $name;
+    protected ?string $name = null;
     protected ?array $payload = null;
 
     public function __construct(string $category)
